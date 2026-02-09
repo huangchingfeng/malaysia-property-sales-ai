@@ -10,6 +10,7 @@
     --primary-dark: #1d4ed8;
     --secondary: #7c3aed;
     --accent: #f59e0b;
+    --success: #10b981;
     --dark: #1e293b;
     --light: #f8fafc;
     --gray: #64748b;
@@ -190,8 +191,32 @@ body {
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--gray);
-    max-width: 600px;
-    margin: 0 auto 40px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.hero-value {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.value-icon {
+    font-size: 1.3rem;
 }
 
 .hero-stats {
@@ -265,14 +290,55 @@ body {
 .section-desc {
     color: var(--gray);
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
+}
+
+/* Who Section */
+.who-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.who-card {
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.who-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.who-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.who-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.who-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
 }
 
 /* Pain Points Section */
 .pain-points-section {
     padding: 80px 0;
-    background: white;
+    background: #fef3c7;
 }
 
 .pain-grid {
@@ -282,10 +348,11 @@ body {
 }
 
 .pain-card {
-    background: #fef3c7;
+    background: white;
     padding: 30px;
     border-radius: 15px;
     border-left: 4px solid var(--accent);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .pain-icon {
@@ -319,56 +386,104 @@ body {
     color: white;
 }
 
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+.benefits-comparison {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
-.benefit-card {
+.comparison-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: 15px;
-    text-align: center;
+    width: 350px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.benefit-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+.comparison-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
 }
 
-.benefit-stat {
+.comparison-card.before {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.comparison-card.before h3 {
+    color: #f87171;
+}
+
+.comparison-card.after {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.comparison-card.after h3 {
+    color: #34d399;
+}
+
+.comparison-card ul {
+    list-style: none;
+}
+
+.comparison-card li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.comparison-card.before li::before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    color: #f87171;
+}
+
+.comparison-card.after li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #34d399;
+}
+
+.comparison-arrow {
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.benefits-result {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.result-card {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    min-width: 200px;
+}
+
+.result-number {
+    display: block;
     font-size: 3rem;
     font-weight: 800;
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 10px;
 }
 
-.benefit-card h3 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.benefit-card p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
-}
-
-.benefits-cta {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-}
-
-.benefits-cta p {
-    font-size: 1.25rem;
-    font-weight: 600;
+.result-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
 }
 
 /* Curriculum Section */
@@ -386,7 +501,7 @@ body {
 .curriculum-item {
     display: flex;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     padding: 30px;
     background: white;
     border-radius: 15px;
@@ -405,23 +520,22 @@ body {
 .time-badge {
     background: var(--gradient);
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     white-space: nowrap;
     height: fit-content;
 }
 
 .curriculum-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     color: var(--dark);
 }
 
 .curriculum-content ul {
     list-style: none;
-    margin-bottom: 15px;
 }
 
 .curriculum-content li {
@@ -437,16 +551,6 @@ body {
     left: 0;
     color: var(--primary);
     font-weight: bold;
-}
-
-.output-tag {
-    background: rgba(37, 99, 235, 0.1);
-    color: var(--primary);
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    display: inline-block;
 }
 
 /* Tools Section */
@@ -481,7 +585,7 @@ body {
 }
 
 .tool-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
@@ -503,6 +607,7 @@ body {
     padding: 50px;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 .instructor-photo {
@@ -510,24 +615,14 @@ body {
 }
 
 .instructor-photo img {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     border-radius: 20px;
     object-fit: cover;
 }
 
 .instructor-info {
     flex: 1;
-}
-
-.instructor-badge {
-    display: inline-block;
-    background: var(--gradient);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-bottom: 15px;
 }
 
 .instructor-name {
@@ -537,21 +632,26 @@ body {
 }
 
 .instructor-title {
-    color: var(--gray);
-    margin-bottom: 10px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
 .instructor-quote {
     font-style: italic;
-    color: var(--primary);
-    margin-bottom: 20px;
+    color: var(--gray);
+    margin-bottom: 25px;
     font-size: 1.1rem;
+    padding: 15px;
+    border-left: 3px solid var(--primary);
+    background: rgba(37, 99, 235, 0.05);
 }
 
 .instructor-stats {
     display: flex;
     gap: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .instructor-stat {
@@ -560,7 +660,7 @@ body {
 
 .stat-num {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary);
 }
@@ -574,20 +674,94 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
 }
 
 .feature-tag {
     background: rgba(37, 99, 235, 0.1);
     color: var(--primary);
-    padding: 5px 12px;
+    padding: 8px 15px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
-.instructor-clients {
-    color: var(--gray);
+/* Clients Section */
+.clients-section {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.clients-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.client-category {
+    text-align: center;
+    padding: 20px;
+    background: var(--light);
+    border-radius: 10px;
+}
+
+.client-category h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
     font-size: 0.9rem;
+}
+
+.client-category p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* Success Stories */
+.success-stories {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.success-stories h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.story-card {
+    padding: 30px;
+    background: var(--light);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary);
+}
+
+.story-quote {
+    font-style: italic;
+    color: var(--dark);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.story-author {
+    color: var(--gray);
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 /* Contact Section */
@@ -700,16 +874,15 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .benefits-grid {
+    .who-grid,
+    .pain-grid,
+    .tools-grid,
+    .stories-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .pain-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -738,6 +911,12 @@ body {
         font-size: 2.5rem;
     }
 
+    .hero-value {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
     .hero-stats {
         flex-direction: column;
         gap: 20px;
@@ -747,10 +926,24 @@ body {
         display: none;
     }
 
-    .benefits-grid,
+    .who-grid,
     .pain-grid,
-    .tools-grid {
+    .tools-grid,
+    .stories-grid,
+    .clients-grid {
         grid-template-columns: 1fr;
+    }
+
+    .benefits-comparison {
+        flex-direction: column;
+    }
+
+    .comparison-card {
+        width: 100%;
+    }
+
+    .comparison-arrow {
+        transform: rotate(90deg);
     }
 
     .instructor-card {
@@ -770,6 +963,10 @@ body {
 
     .instructor-features {
         justify-content: center;
+    }
+
+    .instructor-quote {
+        text-align: left;
     }
 
     .curriculum-item {
