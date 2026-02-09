@@ -88,6 +88,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     document.head.appendChild(style);
 })();
 
+// Accordion
+(function() {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const item = trigger.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all other items
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+})();
+
 // Number Animation
 (function() {
     const animateNumber = (el, target, suffix = '') => {
